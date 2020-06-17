@@ -25,6 +25,8 @@ gem 'pry-rails'
 gem 'devise'
 gem 'compass-rails'
 gem 'carrierwave'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
