@@ -1,2 +1,6 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if user_signed_in? %> 
+  <span>ログインに成功しました。 ようこそ！<strong><%= current_user.name %></strong>さん！</span>
+<% end %>
+
+<h1>概要</h1>
+<p>説明文</p>

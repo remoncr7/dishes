@@ -36,10 +36,14 @@
 
 <header>
   <nav class="navbar navbar-expand navbar-light bg-light">
-    <%= link_to "Deviseサンプル", root_path, class: 'navbar-brand' %>
+    <%= link_to "Home", root_path, class: 'navbar-brand' %>
     <div id="Navber">
       <ul class="navbar-nav">
+        
         <% if user_signed_in? %>
+        <li class="nav-item active">
+          <a class="nav-link" href="/">MyPage</a>
+        </li>
           <li class="nav-item active">
             <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>
           </li>
@@ -47,6 +51,9 @@
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
           </li>
       <% else %>
+      　　<li class="nav-item active">
+            <%= link_to "MyPage", new_user_session_path, class: 'nav-link' %>
+          </li>
           <li class="nav-item active">
             <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
           </li>
@@ -60,20 +67,7 @@
 </header>
 
 
-<nav>
-      <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
-      <% if user_signed_in? %> 
-        <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
-        <!-- *_path はUserモデルを作成したときに、
-        deviseにより自動で作成されてますので、rake routesで確認できます -->
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'プロフィール変更', edit_user_registration_path %> |
-        <%= link_to "ログアウト", sign_out_path %>
-      <% else %>
-        <%= link_to "サインイン", new_user_registration_path %> |
-        <%= link_to "ログイン", new_user_session_path %>
-      <% end %>
-    </nav>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
     <%= yield %>
