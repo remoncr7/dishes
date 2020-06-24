@@ -1,6 +1,21 @@
+
+
+  
 <% if user_signed_in? %> 
   <span>ログインに成功しました。 ようこそ！<strong><%= current_user.name %></strong>さん！</span>
 <% end %>
 
 <h1>概要</h1>
 <p>説明文</p>
+
+
+<a href="/new">投稿する</a>
+
+
+<% if @posts.present? %>
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= image_tag post.img.url %></td> 
+  </tr>
+ <% end %>
+ <% end %>
