@@ -35,5 +35,5 @@
     <%= f.submit "登録する" %>
   </div>
 <% end %>
-
+<%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %><br>
 <%= render "devise/shared/links" %>

@@ -26,6 +26,7 @@ gem 'devise'
 gem 'compass-rails'
 gem 'carrierwave'
 gem 'devise-i18n'
+gem 'rails-i18n'
 gem 'devise-i18n-views'
 gem 'mini_magick'
 # Use Active Storage variant
