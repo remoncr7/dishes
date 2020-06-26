@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   
   root to: "posts#index"
+  get "/my_post", to:"posts#my_post"
   get "/new", to:"posts#new"
   post "/", to:"posts#create"
 

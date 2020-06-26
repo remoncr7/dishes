@@ -1,10 +1,5 @@
-<h1>概要</h1>
-<p>説明文</p>
-
-
 <a href="/new">投稿する</a>
 <br>
-
 
 <% if @posts.present? %>
   <% @posts.each do |post| %>
@@ -13,10 +8,6 @@
       <td><%= post.title %></td><br>
     <tr>
       <td><%= image_tag post.img.url(:thumb ) if post.img? %></td><br>
-    </tr>
-    <tr>
-      <th><strong>ユーザー名：</strong></th>
-      <td><%= post.user.name %></td><br>
     </tr>
     <tr>
       <th><strong>コメント：</strong></th>
