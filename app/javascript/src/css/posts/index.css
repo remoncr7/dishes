@@ -1,4 +1,6 @@
-p {
-  background-color: rosybrown;
+.element {
+  display: inline-block;
+  background-color: darkgray;
+  padding: 10px 2px;
 }
 /*# sourceMappingURL=index.css.map */
