@@ -6,6 +6,7 @@
   <div class="form">
       <h1>投稿する</h1>
       <%= form_for @post, :url => { action: "create"} do |f| %>
+         <%= render 'layouts/error_messages', model: f.object %>
          <%= f.label :タイトル %><br />
          <%= f.text_field :title, class: "field" %><br >
          <p>画像</p>

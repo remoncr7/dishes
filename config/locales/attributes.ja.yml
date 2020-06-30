@@ -8,9 +8,20 @@ ja:
         password_confirmation: パスワード（再入力）
         remember_me: 次回からパスワード入力を省く
         birth_date: 生年月日
+      post:
+        title: タイトル
+        img: 画像
     errors:
-      messages:
-        record_invalid: "バリデーションに失敗しました: %{errors}"
-        restrict_dependent_destroy:
-          has_one: "%{record}が存在しているので削除できません"
-          has_many: "%{record}が存在しているので削除できません"
+      models:
+        post:
+          attributes:
+            img: 
+              blank: "を選択して下さい"
+  errors:
+    messages:
+      record_invalid: "バリデーションに失敗しました: %{errors}"
+      restrict_dependent_destroy:
+        has_one: "%{record}が存在しているので削除できません"
+        has_many: "%{record}が存在しているので削除できません"
+      extension_whitelist_error: "は%{extension}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
+      max_size_error: "ファイルを%{max_size}バイト以下のサイズにしてください"

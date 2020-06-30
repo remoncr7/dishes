@@ -15,11 +15,11 @@ class PostsController < ApplicationController
   def create
     @post=Post.new(posts_params)
     @post.user = current_user
-    
+    # @post.save
     if @post.save
-      redirect_to root_path, notice: "投稿しました！！！"
+      redirect_to root_path, notice: "投稿しました！"
     else
-      redirect_to root_path, notice: "投稿に失敗しました"
+      render :new
     end
     
   end
