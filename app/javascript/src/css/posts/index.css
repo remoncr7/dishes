@@ -3,4 +3,42 @@
   background-color: darkgray;
   padding: 10px 2px;
 }
+
+body {
+  background-color: bisque;
+}
+
+.content {
+  position: relative;
+}
+
+.content .form {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.content .form .field {
+  width: 400px;
+}
+
+.content .form .field.fa-image:before {
+  cursor: pointer;
+}
+
+.content .form .hoge {
+  display: none;
+}
+
+.content .form .fa-image {
+  font-size: 20em;
+}
+
+.content .form .text-field {
+  height: 200px;
+}
 /*# sourceMappingURL=index.css.map */

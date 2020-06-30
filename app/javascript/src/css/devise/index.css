@@ -1,1 +1,24 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+body {
+  background-color: bisque;
+}
+
+.container {
+  position: relative;
+  width: 100vh;
+  height: 100vh;
+}
+
+.container .form {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.container .form .field {
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=index.css.map */

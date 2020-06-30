@@ -1,14 +1,21 @@
-<h1>投稿する</h1>
+<%= javascript_pack_tag 'posts/index' %>
+<%= stylesheet_pack_tag 'posts/index' %>
 
-<%= form_for @post, :url => { action: "create"} do |f| %>
-   <%= f.label :タイトル %><br />
-   <%= f.text_field :title %><br >
-   <%= f.label :画像 %><br />
-   <%= f.file_field :img %><br />
-   <%= f.label :コメント %><br />
-   <%= f.text_area :text %><br >
-   <%= f.label :参考URL %><br />
-   <%= f.text_field :url %><br >
-   <%= f.submit '投稿' %>
-<% end %>
 
+<div class="content">
+  <div class="form">
+      <h1>投稿する</h1>
+      <%= form_for @post, :url => { action: "create"} do |f| %>
+         <%= f.label :タイトル %><br />
+         <%= f.text_field :title, class: "field" %><br >
+         <p>画像</p>
+         <%= f.label :img , :' ' ,class: "fas fa-image field" %><br />
+         <%= f.file_field :img, class: "field hoge " %><br />
+         <%= f.label :コメント %><br />
+         <%= f.text_area :text, class: "field text-field" %><br >
+         <%= f.label :参考URL %><br />
+         <%= f.text_field :url, class: "field" %><br >
+         <%= f.submit '投稿' , class: "actions"%>
+      <% end %>
+ </div>
+</div>

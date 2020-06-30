@@ -1,5 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 
-body {
-  margin :0 10px ;
+
+
+.field,
+.actions,
+h1, 
+h2 {
+  margin-bottom: 20px;
 }
+
+input {
+  margin: 0 auto;
+}
+
+
+
+
