@@ -1,11 +1,7 @@
 .element {
   display: inline-block;
-  background-color: darkgray;
+  background-color: white;
   padding: 10px 2px;
-}
-
-body {
-  background-color: bisque;
 }
 
 .content {

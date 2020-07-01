@@ -3,12 +3,12 @@
 
 <% if @posts.present? %>
   <% @posts.each do |post| %>
+      <td><%= image_tag post.img.url(:thumb ) if post.img? %></td><br>
+    </tr>
     <tr>
       <th><strong>タイトル：</strong></th>
       <td><%= post.title %></td><br>
     <tr>
-      <td><%= image_tag post.img.url(:thumb ) if post.img? %></td><br>
-    </tr>
     <tr>
       <th><strong>コメント：</strong></th>
       <td><%= post.text %></td><br>

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do            
+  resources :posts
 
   
   root to: "posts#index"
+  get 'posts/:id', to: 'posts#show'
   get "/my_post", to:"posts#my_post"
   get "/new", to:"posts#new"
   post "/", to:"posts#create"
@@ -19,6 +21,5 @@ Rails.application.routes.draw do
   end
   
   
-  resources :posts
 end
 

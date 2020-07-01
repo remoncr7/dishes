@@ -12,21 +12,25 @@ class PostsController < ApplicationController
     @post=Post.new
   end
   
+
   def create
     @post=Post.new(posts_params)
     @post.user = current_user
-    # @post.save
     if @post.save
       redirect_to root_path, notice: "投稿しました！"
     else
       render :new
     end
-    
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    # binding.pry
   end
   
   private
   def posts_params
-    params.require(:post).permit(:title, :text, :img, :url, :user_id)
+    params.require(:post).permit( :title, :text, :img, :url, :user_id)
   end
 
   

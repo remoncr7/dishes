@@ -1,0 +1,40 @@
+<%# <%= javascript_pack_tag 'posts/show' %> 
+<%# <%= stylesheet_pack_tag 'posts/show' %> 
+
+
+<button href="/new" >投稿する</button>
+<br>
+
+<div class="container" >
+  <div class="row">
+    
+    <div class="element">
+      
+      <tr>
+        <td><%= image_tag @post.img.url(:thumb ) if @post.img? %></td><br>
+      </tr>
+      <tr>
+        <th><strong>タイトル：</strong></th>
+        <td><%= @post.title %></td><br>
+      </tr>
+      <tr>
+        <th><strong>ユーザー名：</strong></th>
+        <td><%= @post.user.name %></td><br>
+      </tr>
+      <tr>
+        <th><strong>コメント：</strong></th>
+        <td><%= @post.text %></td><br>
+      </tr>
+      <tr>
+        <th><strong>参考にした動画やレシピ：</strong></th>
+        <td><%= @post.url %></td><br>
+      </tr>
+      <tr>
+        <th><strong>投稿日：</strong></th>
+        <td><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></td><br>
+      </tr>
+    </div>
+  </div>
+ </div>
+
+ <a href="/">戻る</a>

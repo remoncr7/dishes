@@ -1,6 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
-
+body {
+  background-color: rgb(230,230,230);
+}
 
 .field,
 .actions,
@@ -15,4 +17,7 @@ input {
 
 
 
-
+// div.field_with_errors {
+//   background-color: #fcc;
+//   padding: 2px;
+// }

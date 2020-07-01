@@ -1,1 +1,16 @@
-/* No CSS *//*# sourceMappingURL=application.css.map */
+.field,
+.actions,
+h1,
+h2 {
+  margin-bottom: 20px;
+}
+
+input {
+  margin: 0 auto;
+}
+
+div.field_with_errors {
+  background-color: #fcc;
+  padding: 2px;
+}
+/*# sourceMappingURL=application.css.map */
