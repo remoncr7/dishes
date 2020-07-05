@@ -1,5 +1,5 @@
 <%# <%= javascript_pack_tag 'posts/show' %> 
-<%# <%= stylesheet_pack_tag 'posts/show' %> 
+<%= stylesheet_pack_tag 'posts/index' %> 
 
 
 <button href="/new" >投稿する</button>
@@ -7,9 +7,7 @@
 
 <div class="container" >
   <div class="row">
-    
     <div class="element">
-      
       <tr>
         <td><%= image_tag @post.img.url(:thumb ) if @post.img? %></td><br>
       </tr>

@@ -1,3 +1,9 @@
+body {
+  background-color: #e6e6e6;
+  margin: 0;
+  padding: 0;
+}
+
 .field,
 .actions,
 h1,
@@ -7,10 +13,5 @@ h2 {
 
 input {
   margin: 0 auto;
-}
-
-div.field_with_errors {
-  background-color: #fcc;
-  padding: 2px;
 }
 /*# sourceMappingURL=application.css.map */

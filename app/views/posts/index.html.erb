@@ -5,25 +5,40 @@
 <button href="/new" >投稿する</button>
 <br>
 
-<div class="container" >
+<div class="container-fluid">
   <div class="row">
     <% if @posts.present? %>
-    <% @posts.each do |post| %>
-    <%# <div class="element col-lg-3 col-xs-4"> %>
-    <a href= "/posts/<%= post.id %> ", class="element col-lg-3 col-xs-4">
-      <tr>
-        <td><%= image_tag post.img.url(:thumb ) if post.img? %></td><br>
-      </tr>
-      <tr>
-        <th><strong>料理名：</strong></th>
-        <td><%= post.title %></td><br>
-      <tr>
-        <th><strong>ユーザー名：</strong></th>
-        <td><%= post.user.name %></td><br>
-      </tr>
-      
-    </a>
+      <% @posts.each do |post| %>
+        <div class="aaa col-4 col-sm-3 " >
+          <div class="aa">
+            <a href= "/posts/<%= post.id %> ", class="element ">
+              <tr>
+                <td><%= image_tag post.img.url , class: 'img-fluid' %></td><br>
+              </tr>
+              <div class="texts">
+                <span class="text user-name">
+                  <tr>
+                    <td><%= post.user.name %></td>
+                  </tr>
+                </span>
+                <span class="text date">
+                  <tr>
+                    <td><%= post.created_at.strftime('%m/%d') %></td>
+                  </tr>
+                </span>
+                <br>
+                <span class="text title">
+                  <tr>
+                    <td><%= post.title %></td>
+                  </tr>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-  <% end %>
- <% end %>
- </div>
+</div>
+
+

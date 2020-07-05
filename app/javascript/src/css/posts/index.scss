@@ -1,24 +1,55 @@
-
-// .container {
-//   background-color:wheat;
-// }
-
-.element {
-  display:inline-block;
-  background-color:white;
-  padding: 10px 2px;
+.btn {
+  border: 2px;
+  border-radius: 50%;
 }
-
-// .btn {
-  // border:2px;
-  // border-radius: 50%;
-// }
-
-
-
-.content {
+// indexアクション
+.container-fluid {
   position: relative;
 
+  & .row {
+    margin: 0 auto;
+
+    & .aaa {
+      padding: 1%;
+      max-width: 250px;
+      & .aa {
+        background-color: white;
+
+        & .element {
+          // position:relative;
+          display: inline-block;
+          // margin: 10px 2px;
+          padding: 0;
+          // margin: 10px 10px;
+          width: 100%;
+          text-decoration: none;
+
+          & .texts {
+            padding: 2% 4%;
+
+            & img {
+              width: 100%;
+            }
+
+            & .text {
+              color: rgb(60, 60, 60);
+              font-size: 2%;
+            }
+          }
+
+          & .user-name {
+            margin-right: 10%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// newアクション
+
+.container {
+  position: relative;
   & .form {
     display: inline-block;
     width: 100%;
@@ -31,35 +62,20 @@
     & .field {
       width: 400px;
 
-      &.fa-image:before{
-        cursor:pointer;
-
+      &.fa-image:before {
+        cursor: pointer;
       }
     }
 
-    .hoge {
+    & .hoge {
       display: none;
     }
 
     .fa-image {
-      font-size:20em;
+      font-size: 20em;
     }
     & .text-field {
-      height:200px;
+      height: 200px;
     }
   }
 }
-
-// .field,
-// .submit-btn,
-// h1 {
-//   margin-bottom: 20px;
-// }
-
-// .field {
-//   width: 300px;
-// }
-
-// .text-field {
-//   height:200px;
-// }
