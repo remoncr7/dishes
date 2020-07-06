@@ -1,10 +1,7 @@
 <%= javascript_pack_tag 'posts/index' %>
 <%= stylesheet_pack_tag 'posts/index' %>
 
-
-<button href="/new" >投稿する</button>
 <br>
-
 <div class="container-fluid">
   <div class="row">
     <% if @posts.present? %>
@@ -39,6 +36,15 @@
       <% end %>
     <% end %>
   </div>
+</div>
+
+<div class="bb">
+  <a href="/new" class="post-btn">
+    <div class="btn-chars">
+      <div>投稿</div>
+      <i class="fas fa-camera"></i>
+    </div>
+  </a>
 </div>
 
 

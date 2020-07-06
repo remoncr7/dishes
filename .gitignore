@@ -30,6 +30,7 @@
 
 /public/packs
 /public/packs-test
+/public/uploads
 /node_modules
 /yarn-error.log
 yarn-debug.log*
@@ -40,5 +41,3 @@ yarn-debug.log*
 /vendor/bundle
 /.idea
 
- # Ignore uploaded files in development
- /public/uploads/*
