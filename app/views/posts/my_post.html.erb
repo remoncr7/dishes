@@ -7,30 +7,30 @@
   <div class="row">
     <% if @posts.present? %>
       <% @posts.each do |post| %>
-        <div class="aaa col-4 col-sm-3" >
-          <div class="aa">
-            <div class="element">
-              <td><%= image_tag post.img.url , class: 'img-fluid' %></td><br>
-              <div class="texts">
-                <span class="text title">
+        <div class="post col-4 col-sm-3" >
+          <div class="post__item">
+            <div class="post__anchor">
+              <td><%= image_tag post.img.url , class: ' post__img img-fluid' %></td><br>
+              <div class="post__texts">
+                <span class="post__text post__user-name">
                   <tr>
                     <th><strong>タイトル：</strong></th>
                     <td><%= post.title %></td><br>
                   </tr>
                 </span>
-                <span class="text">
+                <span class="post__text">
                   <tr>
                     <th><strong>コメント：</strong></th>
                     <td><%= post.text %></td><br>
                   </tr>
                 </span>
-                <span class="text">
+                <span class="post__text">
                   <tr>
                     <th><strong>参考にした動画やレシピ：</strong></th>
                     <td><%= post.url %></td><br>
                   </tr>
                 </span>
-                <span class="text date">
+                <span class="post__text post__date">
                   <tr>
                     <th><strong>投稿日：</strong></th>
                     <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td><br>
@@ -44,11 +44,12 @@
     <% end %>
   </div>
 </div>
-<div class="bb">
-    <a href="/new" class="post-btn">
-      <div class="btn-chars">
-        <div>投稿</div>
-        <i class="fas fa-camera"></i>
-      </div>
-    </a>
-  </div>
+
+<div class="post-btn">
+  <a href="/new" class="post-btn__anchor">
+    <div class="post-btn__chars">
+      <div>投稿</div>
+      <i class="fas fa-camera"></i>
+    </div>
+  </a>
+</div>

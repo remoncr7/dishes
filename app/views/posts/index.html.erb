@@ -6,25 +6,25 @@
   <div class="row">
     <% if @posts.present? %>
       <% @posts.each do |post| %>
-        <div class="aaa col-4 col-sm-3 " >
-          <div class="aa">
-            <a href= "/posts/<%= post.id %> ", class="element ">
+        <div class="post col-4 col-sm-3 " >
+          <div class="post__item">
+            <a href= "/posts/<%= post.id %> ", class="post__anchor">
               <tr>
-                <td><%= image_tag post.img.url , class: 'img-fluid' %></td><br>
+                <td><%= image_tag post.img.url , class: 'post__img img-fluid' %></td><br>
               </tr>
-              <div class="texts">
-                <span class="text user-name">
+              <div class="post__texts">
+                <span class="post__text post__user-name">
                   <tr>
                     <td><%= post.user.name %></td>
                   </tr>
                 </span>
-                <span class="text date">
+                <span class="post__text post__date">
                   <tr>
                     <td><%= post.created_at.strftime('%m/%d') %></td>
                   </tr>
                 </span>
                 <br>
-                <span class="text title">
+                <span class="post__text post__title">
                   <tr>
                     <td><%= post.title %></td>
                   </tr>
@@ -38,13 +38,15 @@
   </div>
 </div>
 
-<div class="bb">
-  <a href="/new" class="post-btn">
-    <div class="btn-chars">
+<div class="post-btn">
+  <a href="/new" class="post-btn__anchor">
+    <div class="post-btn__chars">
       <div>投稿</div>
       <i class="fas fa-camera"></i>
     </div>
   </a>
 </div>
+
+
 
 
