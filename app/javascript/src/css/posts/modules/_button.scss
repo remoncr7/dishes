@@ -1,0 +1,51 @@
+
+
+.post-btn {
+  position: fixed;
+  right: -14px;
+  bottom: -14px;
+  text-align: center;
+  z-index: 2;
+  @media (min-width: 600px) {
+    bottom: 32px;
+    font-size: 37px;
+    height: 160px;
+    right: 32px;
+    width: 160px;
+  }
+  &__anchor {
+    text-decoration: none;
+    display: block;
+    // padding-bottom:1px;
+  }
+
+  &__chars {
+    padding-top: 15px;
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    background-color: orange;
+    border-radius: 50%;
+    color: white;
+    @media (min-width: 600px) {
+      width: 160px;
+      height: 160px;
+      padding-top: 32px;
+    }
+
+    & .fas {
+      max-width: 100%;
+      max-height: 100%;
+      // color: rgb(255, 255, 255);
+      display: block;
+      height: 24px;
+      width: 26px;
+      margin: 5px auto 0px;
+      @media (min-width: 600px) {
+        margin-top: 0;
+        width: 60px;
+        height: 54px;
+      }
+    }
+  }
+}

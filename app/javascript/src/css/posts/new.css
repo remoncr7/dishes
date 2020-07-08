@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+}
+
+.container .post-form {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.container .post-form__field {
+  width: 400px;
+  margin-bottom: 40px;
+}
+
+.container .post-form__field.fa-image:before {
+  cursor: pointer;
+}
+
+.container .post-form__file-field {
+  display: none;
+}
+
+.container .post-form .fa-image {
+  font-size: 20em;
+}
+
+.container .post-form__text-field {
+  height: 200px;
+}
+/*# sourceMappingURL=new.css.map */

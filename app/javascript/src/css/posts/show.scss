@@ -1,0 +1,14 @@
+@import 'modules/button';
+
+
+  .container {
+    background-color:red;
+    .row {
+      .post {
+        display:inline-block;
+        
+        // margin: 0 auto;
+        background-color: white;
+      }
+    }
+  }

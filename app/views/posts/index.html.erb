@@ -8,7 +8,7 @@
       <% @posts.each do |post| %>
         <div class="post col-4 col-sm-3 " >
           <div class="post__item">
-            <a href= "/posts/<%= post.id %> ", class="post__anchor">
+            <a href= "/posts/<%= post.id %> ", class="post__elements">
               <tr>
                 <td><%= image_tag post.img.url , class: 'post__img img-fluid' %></td><br>
               </tr>
