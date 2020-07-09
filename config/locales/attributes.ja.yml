@@ -11,6 +11,7 @@ ja:
       post:
         title: タイトル
         img: 画像
+        url: URL
     errors:
       models:
         post:

@@ -92,4 +92,8 @@
     height: 54px;
   }
 }
+
+.post__texts {
+  overflow-wrap: break-word;
+}
 /*# sourceMappingURL=my-post.css.map */

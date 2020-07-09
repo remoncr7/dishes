@@ -56,12 +56,57 @@
   }
 }
 
-.container {
-  background-color: red;
-}
-
 .container .row .post {
   display: inline-block;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container .row .post__item {
   background-color: white;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.container .row .post__elements {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.container .row .post__info {
+  border: 5px;
+  color: #1e1e1e;
+  font-size: 5%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.container .row .post__user-name {
+  font-size: 1rem;
+}
+
+.container .row .post__date {
+  float: right;
+}
+
+.container .row .post__img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container .row .post__texts {
+  padding: 2% 0;
+  overflow-wrap: break-word;
+}
+
+.container .row .post__comment {
+  display: block;
+  margin: 10px 0;
+}
+
+.container .row .post__text {
+  color: #1e1e1e;
 }
 /*# sourceMappingURL=show.css.map */

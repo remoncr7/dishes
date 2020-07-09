@@ -23,7 +23,11 @@
                 </span>
                 <span class="post__text">
                   <tr>
-                    <td><%= post.url %></td><br>
+                    <% if post.url.present? %>
+                      <a href=<%= post.url %> target="_blank"> 参考にしたレシピ</a>
+                    <% else %>
+                      ------
+                    <% end %>
                   </tr>
                 </span>
               </div>

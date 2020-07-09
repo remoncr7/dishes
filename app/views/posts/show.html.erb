@@ -6,42 +6,42 @@
   <div class="row"> 
     <div class="post">
       <div class="post__item">
-        <div class= "post__info">
-          <span class="post__text post__user-name">
-            <tr>
-              <td><%= @post.user.name %></td>
-            </tr>
-          </span>
-          <span class="post__text post__date">
-            <tr>
-              <td><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></td><br>
-            </tr>
-          </span>
-        </div>
-        <span class= "post__img img-fluid">
+        <div class="post__elements">
+          <div class= "post__info">
+            <span class= "post__user-name">
+              <tr>
+                <td><%= @post.user.name %></td>
+              </tr>
+            </span>
+            <span class=" post__date">
+              <tr>
+                <td><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></td><br>
+              </tr>
+            </span>
+          </div>
           <tr>
-            <td><%= image_tag @post.img.url(:thumb ) %></td><br>
+            <td><%= image_tag @post.img.url(:thumb ), class: 'post__img img-fluid' %></td><br>
           </tr>
-        </span>
-        <div class="post__texts">
-          <span class="post__text post__title">
-            <tr>
-              <th><strong>タイトル：</strong></th>
-              <td><%= @post.title %></td><br>
-            </tr>
-          </span>
-          <span class="post__text post__comment">
-            <tr>
-              <th><strong>コメント：</strong></th>
-              <td><%= @post.text %></td><br>
-            </tr>
-          </span>
-          <span class="post__text post__url">
-            <tr>
-              <th><strong>参考URL：</strong></th>
-              <td><%= @post.url %></td><br>
-            </tr>
-          </span>
+          <div class="post__texts">
+            <span class="post__text post__title">
+              <tr>
+                <th><strong>タイトル：</strong></th>
+                <td><%= @post.title %></td><br>
+              </tr>
+            </span>
+            <span class="post__text post__comment">
+              <tr>
+                <td><%= @post.text %></td><br>
+              </tr>
+            </span>
+            <span class="post__text post__url">
+              <tr>
+                <% if @post.url.present? %>
+                  <a href=<%= @post.url %> target="_blank"> 参考にしたレシピ</a>
+                <% end %>
+              </tr>
+            </span>
+          </div>
         </div>
       </div>
     </div>

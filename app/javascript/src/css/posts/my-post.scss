@@ -1,3 +1,8 @@
 @import 'modules/index';
 @import 'modules/button';
 
+.post {
+  &__texts {
+    overflow-wrap: break-word;
+  }
+}
