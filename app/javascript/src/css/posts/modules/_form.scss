@@ -1,0 +1,34 @@
+
+.container {
+  position: relative;
+  & .post-form {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+
+    &__field {
+      width: 400px;
+      margin-bottom: 40px;
+
+      &.fa-image:before {
+        cursor: pointer;
+      }
+    }
+
+    &__file-field {
+      display: none;
+    }
+
+    .fa-image {
+      font-size: 20em;
+    }
+
+    &__text-field {
+      height: 200px;
+    }
+  }
+}

@@ -13,9 +13,10 @@
               <div class="post__texts">
                 <span class="post__text post__date">
                   <tr>
-                    <td><%= post.created_at.strftime('%Y/%m/%d') %></td><br>
+                    <td><%= post.created_at.strftime('%Y/%m/%d') %></td>
                   </tr>
                 </span>
+                <a href= "/posts/<%= post.id %>/edit" class="post__edit far fa-edit"></a><br>
                 <span class="post__text post__user-name">
                   <tr>
                     <td><%= post.title %></td><br>
