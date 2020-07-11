@@ -1,10 +1,8 @@
-
 .container {
-  // height:100vh;
-margin-bottom: 50px;
+  margin-bottom: 50px;
   & .form {
     max-width: 343px;
-    margin:0 auto;
+    margin: 0 auto;
 
     & h2 {
       font-weight: bold;
@@ -21,15 +19,14 @@ margin-bottom: 50px;
       & select {
         width: 32%;
         height: 42px;
-
       }
       & label:not(.remember-me) {
-        font-weight:bold;
+        font-weight: bold;
       }
       & .btn {
         margin-top: 25px;
         background-color: orange;
-        color:white;
+        color: white;
       }
     }
   }

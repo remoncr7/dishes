@@ -1,6 +1,37 @@
 @import 'modules/index';
 @import 'modules/button';
 
+.top {
+  position:relative;
+  &__text {
+    position:absolute;
+    top:38%;
+    left:50%;
+    transform:translate(-50% ,-50%);
+    color:white;
+    font-size:1.2em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+  &__img {
+    object-position: 50% 62%;
+    object-fit: cover;
+    width:100%;
+    height: 220px;
+    margin-bottom: 15%;
+    @media(min-width: 400px) {
+      height:300px;
+      margin-bottom:10%;
+    }
+    @media(min-width: 550px) {
+      height:400px;
+    }
+    @media(min-width: 1450px) {
+      height:500px;
+    }
+  }
+
+}
 
 .post {
   &__user-name {

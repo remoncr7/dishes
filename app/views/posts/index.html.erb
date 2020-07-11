@@ -1,7 +1,10 @@
 <%= javascript_pack_tag 'posts/index' %>
 <%= stylesheet_pack_tag 'posts/index' %>
 
-<br>
+<div class="top">
+  <%= image_pack_tag 'avocado-1838785_1920.jpg',class: "top__img" %>
+  <p class="top__text">ああああああああ</p>
+</div>
 <div class="container-fluid">
   <div class="row">
     <% if @posts.present? %>

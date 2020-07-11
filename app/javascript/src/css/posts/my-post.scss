@@ -1,13 +1,13 @@
-@import 'modules/index';
-@import 'modules/button';
+@import "modules/index";
+@import "modules/button";
 
 .post {
   &__texts {
     overflow-wrap: break-word;
   }
 
-  &__edit{
-    float:right;
-    color: rgb(160,160,160);
+  &__edit {
+    float: right;
+    color: rgb(160, 160, 160);
   }
 }
