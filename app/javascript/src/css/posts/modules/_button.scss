@@ -11,8 +11,10 @@
     right: 32px;
     width: 160px;
   }
-  &__anchor {
+  & a {
     text-decoration: none;
+  }
+  &__anchor {
     display: block;
   }
 
