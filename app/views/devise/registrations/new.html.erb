@@ -26,7 +26,7 @@
       <div class="form-group">
         <%= f.label :password %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> 文字以上）</em><br />
+        <strong>(<%= @minimum_password_length %> 文字以上）</strong><br />
         <% end %>
         <%= f.password_field :password, autocomplete: "new-password" ,placeholder: "　６文字以上の半角英数字" %><br />
       </div>

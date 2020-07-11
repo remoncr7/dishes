@@ -29,7 +29,7 @@
       <% end %>
 
       <div class="form-group">
-        <strong>新しい</strong><%= f.label :password %> <em>（<%= @minimum_password_length %> 文字以上）</em><br />
+        <strong>新しい</strong><%= f.label :password %> <strong>（<%= @minimum_password_length %> 文字以上）</strong><br />
         <%= f.password_field :password, autocomplete: "new-password" ,placeholder: "　パスワードを変更する場合のみ入力" %>
         <% if @minimum_password_length %>
           
