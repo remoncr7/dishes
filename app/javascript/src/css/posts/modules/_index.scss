@@ -1,6 +1,7 @@
 .container-fluid {
-  position: relative;
+  // position: relative;
   & .row {
+    max-width: 1000px;
     margin: 0 auto;
     & .post {
       padding: 1%;

@@ -18,10 +18,10 @@
     object-fit: cover;
     width:100%;
     height: 220px;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
     @media(min-width: 400px) {
       height:300px;
-      margin-bottom:10%;
+      margin-bottom:5%;
     }
     @media(min-width: 550px) {
       height:400px;
@@ -30,7 +30,15 @@
       height:500px;
     }
   }
+}
 
+.post-list {
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  @media(min-width: 600px) {
+    font-size: 2em;
+  }
 }
 
 .post {
