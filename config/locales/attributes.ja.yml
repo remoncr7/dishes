@@ -12,6 +12,7 @@ ja:
         title: タイトル
         img: 画像
         url: URL
+        text: キャプション
     errors:
       models:
         post:
