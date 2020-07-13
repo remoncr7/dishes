@@ -1,13 +1,15 @@
 <%= javascript_pack_tag 'posts/my-post' %>
 <%= stylesheet_pack_tag 'posts/my-post' %>
 
+<p class="post-list">MyPost</p>
+
 <div class="container-fluid">
   <div class="row">
     <% if @posts.present? %>
       <% @posts.each do |post| %>
         <div class="post col-4 col-sm-3" >
           <div class="post__item">
-            <div class="post__elements">
+            <a href= "/posts/<%= post.id %> ", class="post__elements">
               <td><%= image_tag post.img.url , class: ' post__img img-fluid' %></td><br>
               <div class="post__texts">
                 <span class="post__text post__date">
@@ -31,7 +33,7 @@
                   </tr>
                 </span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       <% end %>

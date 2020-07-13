@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <% if @posts.present? %>
+      <% @posts.each do |post| %>
+        <div class="post col-4 col-sm-3 " >
+          <div class="post__item">
+            <a href= "/posts/<%= post.id %> ", class="post__elements">
+              <tr>
+                <td><%= image_tag post.img.url , class: 'post__img img-fluid' %></td><br>
+              </tr>
+              <div class="post__texts">
+                <span class="post__text post__user-name">
+                  <tr>
+                    <td><%= post.user.name %></td>
+                  </tr>
+                </span>
+                <span class="post__text post__date">
+                  <tr>
+                    <td><%= post.created_at.strftime('%m/%d') %></td>
+                  </tr>
+                </span>
+                <br>
+                <span class="post__text post__title">
+                  <tr>
+                    <td><%= post.title %></td>
+                  </tr>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

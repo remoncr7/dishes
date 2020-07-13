@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: :index
+  before_action :set_post, only:[:user_post, :edit, :update, :destroy]
+
   def index
     @posts=Post.all
   end
@@ -8,11 +10,16 @@ class PostsController < ApplicationController
     @posts = current_user.posts.all
   end
 
+  def user_post
+    @user = @post.user
+   @posts = @user.posts.all
+  end
+  
   def new
     @post=Post.new
   end
   
-
+  
   def create
     @post=Post.new(posts_params)
     @post.user = current_user
@@ -22,21 +29,21 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
+  
   def show
     @post = Post.find(params[:id])
   end
-
+  
   def edit
     @post = Post.find(params[:id])
   end
-
+  
   def update
     @post = Post.find(params[:id])
     @post.update(posts_params)
     redirect_to("/")
   end
-
+  
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -45,6 +52,10 @@ class PostsController < ApplicationController
   
   
   private
+  def set_post
+    @post = Post.find(params[:id])
+ end
+
   def posts_params
     params.require(:post).permit( :title, :text, :img, :url, :user_id)
   end

@@ -7,11 +7,11 @@
       <div class="post__item">
         <div class="post__elements">
           <div class= "post__info">
-            <span class= "post__user-name">
+            <a href="/user_post/<%= @post.id %>" class= "post__user-name">
               <tr>
                 <td><%= @post.user.name %></td>
               </tr>
-            </span>
+            </a>
             <span class=" post__date">
               <tr>
                 <td><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></td><br>

@@ -1,5 +1,6 @@
 @import 'modules/index';
 @import 'modules/button';
+@import 'modules/post-list';
 
 .top {
   position:relative;
@@ -32,14 +33,14 @@
   }
 }
 
-.post-list {
-  font-weight: bold;
-  font-size: 1em;
-  text-align: center;
-  @media(min-width: 600px) {
-    font-size: 2em;
-  }
-}
+// .post-list {
+//   font-weight: bold;
+//   font-size: 1em;
+//   text-align: center;
+//   @media(min-width: 600px) {
+//     font-size: 2em;
+//   }
+// }
 
 .post {
   &__user-name {
