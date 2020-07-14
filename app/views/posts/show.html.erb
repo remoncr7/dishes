@@ -25,9 +25,12 @@
             <span class="post__text post__title">
               <tr>
                 <th><strong>タイトル：</strong></th>
-                <td><%= @post.title %></td><br>
+                <td><%= @post.title %></td>
               </tr>
             </span>
+            <span class="post__like">
+              <%= render 'likes' %>
+            </span><br>
             <span class="post__text post__comment">
               <tr>
                 <td><%= @post.text %></td><br>

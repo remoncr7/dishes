@@ -1,4 +1,5 @@
 @import 'modules/button';
+@import 'modules/like';
 
 
 .container {
@@ -30,6 +31,9 @@
 
       &__user-name {
         font-size: 1rem;
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
       }
 
       &__date {
