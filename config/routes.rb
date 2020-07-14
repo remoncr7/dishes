@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post "/", to:"posts#create"
   get "posts/:id/edit",to: "posts#edit"
   post "posts/:id/update",to: "posts#update"
-
+  get "/like", to: "posts#like"
   # post "/posts/:post_id/likes", to: "likes#destroy"
   
   devise_for :users, :controllers => {

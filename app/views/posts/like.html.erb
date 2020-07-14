@@ -1,0 +1,52 @@
+<%= javascript_pack_tag 'posts/index' %>
+<%= stylesheet_pack_tag 'posts/index' %>
+
+<p>いいねした投稿</p>
+
+<div class="container-fluid">
+  <div class="row">
+    <% if @posts.present? %>
+      <% @user.liked_posts.each do |post| %>
+        <div class="post col-4 col-sm-3 " >
+          <div class="post__item">
+            <a href= "/posts/<%= post.id %> ", class="post__elements">
+              <tr>
+                <td><%= image_tag post.img.url , class: 'post__img img-fluid' %></td><br>
+              </tr>
+              <div class="post__texts">
+                <span class="post__text post__date">
+                  <tr>
+                    <td><%= post.created_at.strftime('%m/%d') %></td>
+                  </tr>
+                </span>
+                <span class="post__likes">
+                  <% if user_signed_in? %>
+                    <% if current_user.already_liked?(post) %>
+                      <span class="likes"><i class="fas fa-heart"></i></i><%= "#{post.likes.count}"%></span>
+                    <% else %>
+                      <span class="likes"><i class="far fa-heart"></i><%= "#{post.likes.count}"%></span>
+                    <% end %>
+                  <% else %>
+                    <span class="likes"><i class="far fa-heart"></i><%= "#{post.likes.count}"%></span>
+                  <% end %>
+                </span>
+                <br>
+                <span class="post__text post__user-name">
+                  <tr>
+                    <td><%= post.user.name %></td>
+                  </tr>
+                </span>
+                <br>
+                <span class="post__text post__title">
+                  <tr>
+                    <td><%= post.title %></td>
+                  </tr>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

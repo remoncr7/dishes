@@ -50,6 +50,11 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to("/my_post")
   end
+
+  def like 
+    @posts=Post.all
+    @user = current_user
+  end
   
   
   private
