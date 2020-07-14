@@ -9,15 +9,22 @@
       <% @posts.each do |post| %>
         <div class="post col-4 col-sm-3" >
           <div class="post__item">
-            <a href= "/posts/<%= post.id %> ", class="post__elements">
-              <td><%= image_tag post.img.url , class: ' post__img img-fluid' %></td><br>
+            <div class="post__elements">
+              <a href= "/posts/<%= post.id %> "><td><%= image_tag post.img.url , class: ' post__img img-fluid' %></td></a><br>
               <div class="post__texts">
                 <span class="post__text post__date">
                   <tr>
                     <td><%= post.created_at.strftime('%Y/%m/%d') %></td>
                   </tr>
                 </span>
-                <a href= "/posts/<%= post.id %>/edit" class="post__edit far fa-edit"></a><br>
+                <span class="post__likes">
+                  <% if current_user.already_liked?(post) %>
+                    <span class="likes"><i class="fas fa-heart"></i></i><%= "#{post.likes.count}"%></span>
+                  <% else %>
+                    <span class="likes"><i class="far fa-heart"></i><%= "#{post.likes.count}"%></span>
+                  <% end %>
+                </span>
+                <br>
                 <span class="post__text post__user-name">
                   <tr>
                     <td><%= post.title %></td><br>
@@ -26,14 +33,17 @@
                 <span class="post__text" >
                   <tr>
                     <% if post.url.present? %>
-                      <a href=<%= post.url %> target="_blank" class="post__url"> 参考にしたレシピ</a>
+                      <a href=<%= post.url %> target="_blank" class="post__url"> レシピ</a>
                     <% else %>
                       ------
                     <% end %>
                   </tr>
                 </span>
+                <span>
+                  <a href= "/posts/<%= post.id %>/edit" class="post__edit far fa-edit"></a>
+                <span>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       <% end %>
