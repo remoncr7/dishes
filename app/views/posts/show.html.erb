@@ -31,16 +31,16 @@
             <span class="post__like">
               <%= render 'likes' %>
             </span><br>
+            <% if @post.url.present? %>
+              <a href=<%= @post.url %> target="_blank" class="post__url">
+                <tr>
+                  <td>参考にしたレシピはこちら</td>
+                </tr>
+              </a>
+            <% end %>
             <span class="post__text post__comment">
               <tr>
                 <td><%= @post.text %></td><br>
-              </tr>
-            </span>
-            <span class="post__text post__url">
-              <tr>
-                <% if @post.url.present? %>
-                  <a href=<%= @post.url %> target="_blank"> 参考にしたレシピ</a>
-                <% end %>
               </tr>
             </span>
           </div>

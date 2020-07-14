@@ -10,5 +10,15 @@
   &__edit {
     float: right;
     color: rgb(160, 160, 160);
+    &:hover{
+      color: black;
+    }
+  }
+  &__url {
+    font-weight: bold;
+    color: black;
+    &:hover{
+      color: black;
+    } 
   }
 }

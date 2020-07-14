@@ -23,10 +23,10 @@
                     <td><%= post.title %></td><br>
                   </tr>
                 </span>
-                <span class="post__text">
+                <span class="post__text" >
                   <tr>
                     <% if post.url.present? %>
-                      <a href=<%= post.url %> target="_blank"> 参考にしたレシピ</a>
+                      <a href=<%= post.url %> target="_blank" class="post__url"> 参考にしたレシピ</a>
                     <% else %>
                       ------
                     <% end %>
