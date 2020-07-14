@@ -14,9 +14,10 @@
               <div class="post__texts">
                 <span class="post__text post__date">
                   <tr>
-                    <td><%= post.created_at.strftime('%Y/%m/%d') %></td>
+                    <td><%= post.created_at.strftime('%m/%d') %></td>
                   </tr>
                 </span>
+                <a href= "/posts/<%= post.id %>/edit" class="post__edit far fa-edit"></a>
                 <span class="post__likes">
                   <% if current_user.already_liked?(post) %>
                     <span class="likes"><i class="fas fa-heart"></i></i><%= "#{post.likes.count}"%></span>
@@ -33,15 +34,12 @@
                 <span class="post__text" >
                   <tr>
                     <% if post.url.present? %>
-                      <a href=<%= post.url %> target="_blank" class="post__url"> レシピ</a>
+                      <a href=<%= post.url %> target="_blank" class="post__url"> レシピはこちら</a>
                     <% else %>
                       ------
                     <% end %>
                   </tr>
                 </span>
-                <span>
-                  <a href= "/posts/<%= post.id %>/edit" class="post__edit far fa-edit"></a>
-                <span>
               </div>
             </div>
           </div>
