@@ -10,7 +10,7 @@
 
       <div class="form-group">
         <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true ,placeholder: "　例）タロウ" %><br />
+        <%= f.text_field :name, autofocus: true ,placeholder: " 例）タロウ" %><br />
       </div>
 
       <div class="form-group">
@@ -20,7 +20,7 @@
 
       <div class="form-group">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" ,placeholder: "　例）abc@example.com"%> <br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" ,placeholder: " 例）abc@example.com"%> <br />
       </div>
 
       <div class="form-group">
@@ -28,12 +28,12 @@
         <% if @minimum_password_length %>
         <strong>(<%= @minimum_password_length %> 文字以上）</strong><br />
         <% end %>
-        <%= f.password_field :password, autocomplete: "new-password" ,placeholder: "　６文字以上の半角英数字" %><br />
+        <%= f.password_field :password, autocomplete: "new-password" ,placeholder: " ６文字以上の半角英数字" %><br />
       </div>
 
       <div class="form-group">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder: "　確認のためもう一度入力" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder: " 確認のためもう一度入力" %><br />
       </div>
 
       <div class="form-group ">
