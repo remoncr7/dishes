@@ -7,10 +7,15 @@
   <div class="row">
     <% if @posts.present? %>
       <% @posts.each do |post| %>
-        <div class="post col-4 col-sm-3" >
+        <div class="post col-4 col-sm-3">
           <div class="post__item">
             <div class="post__elements">
-              <a href= "/posts/<%= post.id %> "><td><%= image_tag post.img.url , class: ' post__img img-fluid' %></td></a><br>
+              <a href="/posts/<%= post.id %>">
+                <td>
+                  <%= image_tag post.img.url, class: 'post__img img-fluid' %>
+                </td>
+              </a>
+              <br>
               <div class="post__texts">
                 <span class="post__text post__date">
                   <tr>
@@ -20,9 +25,15 @@
                 <a href= "/posts/<%= post.id %>/edit" class="post__edit far fa-edit"></a>
                 <span class="post__likes">
                   <% if current_user.already_liked?(post) %>
-                    <span class="likes"><i class="fas fa-heart"></i></i><%= "#{post.likes.count}"%></span>
+                    <span class="likes">
+                      <i class="fas fa-heart"></i>
+                      <%= "#{post.likes.count}" %>
+                    </span>
                   <% else %>
-                    <span class="likes"><i class="far fa-heart"></i><%= "#{post.likes.count}"%></span>
+                    <span class="likes">
+                      <i class="far fa-heart"></i>
+                      <%= "#{post.likes.count}" %>
+                    </span>
                   <% end %>
                 </span>
                 <br>
@@ -34,7 +45,7 @@
                 <span class="post__text" >
                   <tr>
                     <% if post.url.present? %>
-                      <a href=<%= post.url %> target="_blank" class="post__url"> レシピはこちら</a>
+                      <a href=<%= post.url %> target="_blank" class="post__url">レシピはこちら</a>
                     <% else %>
                       ------
                     <% end %>

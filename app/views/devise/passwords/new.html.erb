@@ -10,12 +10,12 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="form-group">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: " ご登録されたメールアドレス" %>
+        <%= f.label :email %><br>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: " ご登録されたメールアドレス" %>
       </div>
 
       <div class="form-group">
-        <%= f.submit "再設定用のURLを送信する" , class:"btn" %>
+        <%= f.submit "再設定用のURLを送信する" ,class:"btn" %>
       </div>
     <% end %>
 

@@ -7,17 +7,17 @@
       <%= form_for @post, :url => { action: "update"} do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
         <p>画像 ※必須(アップロードできるファイルタイプ:jpg jpeg gif png)</p>
-        <%= f.label :img , :' ' ,class: "fas fa-image post-form__field" %><br />
-        <%= f.file_field :img, accept: 'image/jpeg,image/gif,image/png', class: "post-form__field post-form__file-field " %><br />
-        <%= f.label :title, "料理名　※必須(15文字以内)" %><br />
-        <%= f.text_field :title, class: "post-form__field" %><br >
-        <%= f.label :text, "キャプション" %><br />
-        <%= f.text_area :text, class: "post-form__field post-form__text-field" %><br >
-        <%= f.label :url, "参考にしたレシピのURL" %><br />
-        <%= f.text_field :url, class: "post-form__field" %><br >
-        <%= f.submit '更新' , class: "post-form__btn" %><br>
+        <%= f.label :img, :' ', class: "fas fa-image post-form__field" %><br>
+        <%= f.file_field :img, accept: 'image/jpeg,image/gif,image/png', class: "post-form__field post-form__file-field " %><br>
+        <%= f.label :title, "料理名　※必須(15文字以内)" %><br>
+        <%= f.text_field :title, class: "post-form__field" %><br>
+        <%= f.label :text, "キャプション" %><br>
+        <%= f.text_area :text, class: "post-form__field post-form__text-field" %><br>
+        <%= f.label :url, "参考にしたレシピのURL" %><br>
+        <%= f.text_field :url, class: "post-form__field" %><br>
+        <%= f.submit '更新', class: "post-form__btn" %><br>
         <%= link_to "この投稿を消去する", post_path(@post.id), method: :delete, data: {confirm: "本当に削除しますか？"} %><br>
       <% end %>
- </div>
+  </div>
 </div>
 
