@@ -8,12 +8,12 @@
   }
 
   &__edit {
-    // float: left;
     color: rgb(160, 160, 160);
     &:hover{
       color: black;
     }
   }
+  
   &__url {
     font-weight: bold;
     color: orange;
