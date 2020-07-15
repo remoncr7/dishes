@@ -1,6 +1,6 @@
 @import "modules/index";
 @import "modules/button";
-@import 'modules/post-list';
+@import "modules/post-list";
 
 .post {
   &__texts {
@@ -9,16 +9,16 @@
 
   &__edit {
     color: rgb(160, 160, 160);
-    &:hover{
+    &:hover {
       color: black;
     }
   }
-  
+
   &__url {
     font-weight: bold;
     color: orange;
-    &:hover{
+    &:hover {
       color: orange;
-    } 
+    }
   }
 }

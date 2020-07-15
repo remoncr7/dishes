@@ -1,5 +1,5 @@
 .container-fluid {
-  // position: relative;
+  
   & .row {
     max-width: 1000px;
     margin: 0 auto;
@@ -7,7 +7,7 @@
     & .post {
       padding: 1%;
       max-width: 250px;
-      
+
       &__item {
         background-color: white;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);

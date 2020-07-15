@@ -1,32 +1,31 @@
-@import 'modules/button';
-@import 'modules/like';
-
+@import "modules/button";
+@import "modules/like";
 
 .container {
   .row {
     & .post {
-      display:inline-block;
+      display: inline-block;
       max-width: 600px;
-      margin:0 auto;
-      width:100%;
-      
+      margin: 0 auto;
+      width: 100%;
+
       &__item {
         background-color: white;
-        width:90%;
+        width: 90%;
         margin: 0 auto;
-        padding:0 auto;
+        padding: 0 auto;
       }
 
       &__elements {
         margin: 0 auto;
-        width:90%;
+        width: 90%;
       }
-      
+
       &__info {
-        border:5px;
+        border: 5px;
         color: rgb(30, 30, 30);
         font-size: 5%;
-        height:50px;
+        height: 50px;
         line-height: 50px;
       }
 
@@ -38,11 +37,11 @@
       }
 
       &__date {
-        float:right;
+        float: right;
       }
-      
+
       &__img {
-        margin:0 auto;
+        margin: 0 auto;
         width: 100%;
         border: solid 0.5px #e9ecef;
       }
@@ -60,7 +59,7 @@
       &__url {
         display: inline-block;
         border: solid 2px orange;
-        padding:10px;
+        padding: 10px;
         margin: 20px 0;
         color: orange;
         text-decoration: none;

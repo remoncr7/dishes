@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: :index
-  before_action :set_post, only:[:user_post, :edit, :update, :destroy]
+  before_action :set_post, only:[:user_post, :edit, :update, :destroy, :show]
 
   def index
     @posts=Post.all
@@ -12,16 +12,16 @@ class PostsController < ApplicationController
 
   def user_post
     @user = @post.user
-   @posts = @user.posts.all
+    @posts = @user.posts.all
   end
   
   def new
-    @post=Post.new
+    @post = Post.new
   end
   
   
   def create
-    @post=Post.new(posts_params)
+    @post = Post.new(posts_params)
     @post.user = current_user
     if @post.save
       redirect_to root_path, notice: "投稿しました！"
@@ -31,28 +31,24 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post = Post.find(params[:id])
     @like = Like.new
   end
   
   def edit
-    @post = Post.find(params[:id])
   end
   
   def update
-    @post = Post.find(params[:id])
     @post.update(posts_params)
     redirect_to("/")
   end
   
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to("/my_post")
   end
 
   def like 
-    @posts=Post.all
+    @posts = Post.all
     @user = current_user
   end
   
@@ -60,7 +56,7 @@ class PostsController < ApplicationController
   private
   def set_post
     @post = Post.find(params[:id])
- end
+  end
 
   def posts_params
     params.require(:post).permit( :title, :text, :img, :url, :user_id)

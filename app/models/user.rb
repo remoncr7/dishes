@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :liked_posts, through: :likes, source: :post
+  has_many :liked_posts, through: :likes, source: :post, dependent: :destroy
 
   #ユーザーが投稿に対して既にいいねしているか
   def already_liked?(post)
