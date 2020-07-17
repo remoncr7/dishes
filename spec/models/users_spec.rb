@@ -24,20 +24,27 @@ RSpec.describe User, type: :model do
     end
 
     it 'passwardが空だとNG' do
-      @user.password = ''
+      @user.password = @user.password_confirmation = 'a' * 6 
+      expect(@user.valid?).to eq(true)
+
+      @user.password = @user.password_confirmation = ' ' * 6 
       expect(@user.valid?).to eq(false)
     end
 
-    it "パスワードが6文字以上であれば登録できる" do
-      @user.password = '123456'
-      @user.password_confirmation = '123456'
-      expect(@user).to be_valid
-    end
+    describe 'passward length' do
+      context 'パスワードが6桁のとき' do 
+        it "登録できる" do
+          @user.password = @user.password_confirmation = '123456'
+          expect(@user).to be_valid
+        end
+      end
 
-    it "パスワードが5文字以下だと登録できない" do
-      @user.password = '12345'
-      @user.password_confirmation = '12345'
-      expect(@user).not_to be_valid
+      context 'パスワードが5文字のとき' do 
+        it "登録できない" do
+          @user.password = @user.password_confirmation = '12345'
+          expect(@user).not_to be_valid
+        end
+      end
     end
 
     it "メールアドレスに大文字が混ざっていても登録できる" do
@@ -53,11 +60,21 @@ RSpec.describe User, type: :model do
       expect(@user).not_to be_valid
     end
 
-    it  "一意性が正しく機能しているか" do
+    it  "emailの一意性が正しく機能しているか" do
       duplicate_user = @user.dup
       duplicate_user.email = @user.email
       @user.save!
       expect(duplicate_user).not_to be_valid
+    end
+
+    it "大文字が混ざって登録されたemailをリロードしたものは、小文字のemailと一致するか" do
+      @user.email = 'AAA@exAMPLE.com'
+      @user.save!
+      expect(@user.reload.email).to eq 'aaa@example.com'
+    end
+
+    it "パスワードと確認パスワードが一致するか" do
+      expect(@user.password).to eq @user.password_confirmation
     end
 
     
