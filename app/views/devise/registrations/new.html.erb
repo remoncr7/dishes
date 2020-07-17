@@ -13,10 +13,10 @@
         <%= f.text_field :name, autofocus: true, placeholder: " 例）タロウ" %><br>
       </div>
 
-      <div class="form-group">
-          <%= f.label :birth_date %><br>
-          <%= f.date_select :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year), default: Date.new(1989, 1, 1) %><br>
-      </div>
+      <%# <div class="form-group"> %>
+          <%# <%= f.label :birth_date %>
+          <%# <%= f.date_select :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year), default: Date.new(1989, 1, 1) %>
+      <%# </div> %>
 
       <div class="form-group">
         <%= f.label :email %><br>
