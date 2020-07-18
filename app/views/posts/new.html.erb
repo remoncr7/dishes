@@ -6,7 +6,7 @@
       <h1>投稿する</h1>
       <%= form_for @post, :url => { action: "create"} do |f| %>
          <%= render 'layouts/error_messages', model: f.object %>
-         <p>画像 ※必須(アップロードできるファイルタイプ:jpg jpeg gif png)</p>
+         <p>画像 ※必須(ファイルタイプ:jpg jpeg gif png)(4MBバイト以下)</p>
          <%= f.label :img, :' ', class: "fas fa-image post-form__field" %><br>
          <%= f.file_field :img, accept: 'image/jpeg,image/gif,image/png', class: "post-form__field post-form__file-field " %><br>
          <%= f.label :title, "料理名　※必須(15文字以内)" %><br>
