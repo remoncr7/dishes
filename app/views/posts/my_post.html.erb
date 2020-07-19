@@ -22,7 +22,6 @@
                     <td><%= post.created_at.strftime('%m/%d') %></td>
                   </tr>
                 </span>
-                <a href= "/posts/<%= post.id %>/edit" class="post__edit far fa-edit"></a>
                 <span class="post__likes">
                   <% if current_user.already_liked?(post) %>
                     <span class="likes">

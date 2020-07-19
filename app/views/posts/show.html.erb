@@ -36,6 +36,10 @@
                 <td><%= @post.title %></td>
               </tr>
             </span>
+            <% if @post.user == current_user %>
+              <a href= "/posts/<%= @post.id %>/edit" class="post__edit far fa-edit"></a>
+            <% end %>
+
             <span class="post__like">
               <%= render 'likes' %>
             </span>

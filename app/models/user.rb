@@ -17,7 +17,6 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'guest@example.com' ) do |user|
       user.name = 'ゲストユーザー'
       user.password = SecureRandom.urlsafe_base64
-      user.birth_date =  Date.new(1989, 1, 1)
       user.confirmed_at = Time.now  
     end
   end

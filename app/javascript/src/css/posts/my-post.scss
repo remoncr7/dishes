@@ -7,13 +7,6 @@
     overflow-wrap: break-word;
   }
 
-  &__edit {
-    color: rgb(160, 160, 160);
-    &:hover {
-      color: black;
-    }
-  }
-
   &__url {
     font-weight: bold;
     color: orange;

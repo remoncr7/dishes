@@ -51,6 +51,17 @@
         overflow-wrap: break-word;
       }
 
+      &__title {
+        margin-right:10%;
+      }
+
+      &__edit {
+        color: rgb(160, 160, 160);
+        &:hover {
+          color: black;
+        }
+      }
+
       &__comment {
         display: block;
         margin: 10px 0;
