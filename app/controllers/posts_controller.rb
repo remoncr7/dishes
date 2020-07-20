@@ -35,16 +35,26 @@ class PostsController < ApplicationController
   end
   
   def edit
+    @post = Post.find(params[:id])
+    if @post.user == current_user
+      render "edit"
+    else
+      redirect_to root_path, notice: "他のユーザーの投稿の編集はできません"
+    end
   end
   
   def update
     @post.update(posts_params)
-    redirect_to("/")
+    if @post.save
+      redirect_to root_path, notice: "更新しました！"
+    else
+      render :edit
+    end
   end
   
   def destroy
     @post.destroy
-    redirect_to("/my_post")
+    redirect_to("/")
   end
 
   def like 

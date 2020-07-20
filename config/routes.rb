@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "/new", to:"posts#new"
   post "/", to:"posts#create"
   get "posts/:id/edit",to: "posts#edit"
-  post "posts/:id/update",to: "posts#update"
+  patch "/posts/:id/update",to: "posts#update"
   get "/like", to: "posts#like"
   # post "/posts/:post_id/likes", to: "likes#destroy"
   

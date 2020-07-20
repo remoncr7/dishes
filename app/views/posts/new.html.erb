@@ -9,7 +9,7 @@
          <p>画像 ※必須(ファイルタイプ:jpg jpeg gif png)(4MBバイト以下)</p>
          <%= f.label :img, :' ', class: "fas fa-image post-form__field" %><br>
          <%= f.file_field :img, accept: 'image/jpeg,image/gif,image/png', class: "post-form__field post-form__file-field " %><br>
-         <%= f.label :title, "料理名　※必須(15文字以内)" %><br>
+         <%= f.label :title, "タイトル　※必須(15文字以内)" %><br>
          <%= f.text_field :title, class: "post-form__field", placeholder: "　例）オムライス" %><br>
          <%= f.label :text, "キャプション" %><br>
          <%= f.text_area :text, class: "post-form__field post-form__text-field", placeholder: '任意400文字以内（味、見た目、完成度、満足度など' %><br >
