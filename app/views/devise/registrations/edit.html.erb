@@ -10,14 +10,9 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="form-group">
-        <%= f.label :name %><br>
+        <%= f.label :name %><strong>(15文字以内)</strong><br>
         <%= f.text_field :name, autofocus: true %>
       </div>
-
-      <%# <div class="form-group">
-          <%= f.label :birth_date %>
-          <%# <%= f.date_select :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year), default: Date.new(1989, 1, 1) %>
-      <%# </div>  %>
 
       <div class="form-group">
         <%= f.label :email %><br>

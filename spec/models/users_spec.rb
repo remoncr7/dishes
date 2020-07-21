@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  #factoriesフォルダ内で定義した「:user」というユーザーをインスタンス変数に格納(FactoryBot)
   before do 
     @user = build(:user)
   end
