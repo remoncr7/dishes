@@ -6,12 +6,12 @@
           <div class="post__item">
             <a href= "/posts/<%= post.id %>", class="post__elements">
               <tr>
-                <td><%= image_tag post.img.url, class: 'post__img img-fluid' %></td><br>
+                <td><%= image_tag post.img.url, class: "post__img img-fluid" %></td><br>
               </tr>
               <div class="post__texts">
                 <span class="post__text post__date">
                   <tr>
-                    <td><%= post.created_at.strftime('%m/%d') %></td>
+                    <td><%= post.created_at.strftime("%m/%d") %></td>
                   </tr>
                 </span>
                 <span class="post__likes">
@@ -30,7 +30,7 @@
                   <% else %>
                     <span class="likes">
                       <i class="far fa-heart"></i>
-                      <%= "#{post.likes.count}"%>
+                      <%= "#{post.likes.count}" %>
                     </span>
                   <% end %>
                 </span>

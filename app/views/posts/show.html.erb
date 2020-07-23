@@ -1,5 +1,5 @@
-<%= javascript_pack_tag 'posts/show' %>
-<%= stylesheet_pack_tag 'posts/show' %> 
+<%= javascript_pack_tag "posts/show" %>
+<%= stylesheet_pack_tag "posts/show" %> 
 
 <div class="container">
   <div class="row"> 
@@ -22,12 +22,12 @@
             <% end %>
             <span class="post__date">
               <tr>
-                <td><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></td><br>
+                <td><%= @post.created_at.strftime("%Y/%m/%d %H:%M") %></td><br>
               </tr>
             </span>
           </div>
           <tr>
-            <td><%= image_tag @post.img.url, class: 'post__img ' %></td><br>
+            <td><%= image_tag @post.img.url, class: "post__img" %></td><br>
           </tr>
           <div class="post__texts">
             <span class="post__text post__title">
@@ -39,9 +39,8 @@
             <% if @post.user == current_user %>
               <a href= "/posts/<%= @post.id %>/edit" class="post__edit far fa-edit"></a>
             <% end %>
-
             <span class="post__like">
-              <%= render 'likes' %>
+              <%= render "likes" %>
             </span>
             <br>
             <% if @post.url.present? %>

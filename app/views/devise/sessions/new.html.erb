@@ -1,34 +1,29 @@
-<%= stylesheet_pack_tag 'devise/index' %>
-<%= javascript_pack_tag 'devise/index' %>
-
+<%= stylesheet_pack_tag "devise/index" %>
+<%= javascript_pack_tag "devise/index" %>
 
 <div class="container">
   <div class="form">
     <h2>ログイン</h2>
-
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> 
       <div class="form-group">
         <%= f.label :email %><br>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
-
       <div class="form-group">
         <%= f.label :password %><br>
         <%= f.password_field :password, autocomplete: "current-password" %>
       </div>
-
       <% if devise_mapping.rememberable? %>
         <div class="form-group">
           <%= f.check_box :remember_me, class: "remember-me" %>
           <%= f.label :remember_me, class: "remember-me" %>
         </div>
       <% end %>
-
       <div class="form-group">
         <%= f.submit "ログイン", class:"btn" %>
       </div>
     <% end %>
-    <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %><br>
+    <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post %><br>
     <%= render "devise/shared/links" %>
   </div>
 </div>
