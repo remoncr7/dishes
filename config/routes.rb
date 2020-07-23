@@ -12,9 +12,6 @@ Rails.application.routes.draw do
   get 'posts/:id/edit', to: 'posts#edit'
   patch '/posts/:id/update', to: 'posts#update'
   get '/like', to: 'posts#like'
-  # post "/posts/:post_id/likes", to: "likes#destroy"
-
-  # get "/users", to: "users/registrations#new"
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',

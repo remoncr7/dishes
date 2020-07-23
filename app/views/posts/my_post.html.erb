@@ -1,5 +1,5 @@
-<%= javascript_pack_tag 'posts/my-post' %>
-<%= stylesheet_pack_tag 'posts/my-post' %>
+<%= javascript_pack_tag "posts/my-post" %>
+<%= stylesheet_pack_tag "posts/my-post" %>
 
 <p class="post-list">MyPost</p>
 
@@ -12,14 +12,14 @@
             <div class="post__elements">
               <a href="/posts/<%= post.id %>">
                 <td>
-                  <%= image_tag post.img.url, class: 'post__img img-fluid' %>
+                  <%= image_tag post.img.url, class: "post__img img-fluid" %>
                 </td>
               </a>
               <br>
               <div class="post__texts">
                 <span class="post__text post__date">
                   <tr>
-                    <td><%= post.created_at.strftime('%m/%d') %></td>
+                    <td><%= post.created_at.strftime("%m/%d") %></td>
                   </tr>
                 </span>
                 <span class="post__likes">
