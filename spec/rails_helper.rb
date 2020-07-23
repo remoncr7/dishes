@@ -3,7 +3,7 @@ require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rspec'
@@ -63,10 +63,10 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f } # support directoryをrequire
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::ControllerHelpers, type: :controller
-  Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f } #support directoryをrequire
-  config.include RequestSpecHelper, type: :request #type: :requestのときにRequestHelperをinclude
+  config.include RequestSpecHelper, type: :request # type: :requestのときにRequestHelperをinclude
   config.before(:each, type: :system) do
     driven_by :selenium_chrome_headless
   end

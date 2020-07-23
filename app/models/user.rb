@@ -12,12 +12,12 @@ class User < ApplicationRecord
   def already_liked?(post)
     likes.exists?(post_id: post.id)
   end
-  
+
   def self.guest
-    find_or_create_by!(email: 'guest@example.com' ) do |user|
+    find_or_create_by!(email: 'guest@example.com') do |user|
       user.name = 'ゲストユーザー'
       user.password = SecureRandom.urlsafe_base64
-      user.confirmed_at = Time.now  
+      user.confirmed_at = Time.now
     end
   end
 end

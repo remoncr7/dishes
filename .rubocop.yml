@@ -1,0 +1,44 @@
+inherit_from: .rubocop_todo.yml
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# メソッド名のprefixに「set_」「get_」を許可
+AccessorMethodName:
+  Enabled: false
+
+# クラスにコメントを残さないを無効
+Documentation:
+  Enabled: false
+
+# 文字列リテラルをfreezeしない
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# 1つのブロックあたりの行数
+Metrics/BlockLength:
+  Max: 216
+
+# メソッドの行数
+Metrics/MethodLength:
+  Max: 15
+
+# Layout/ExtraSpacing:
+#   Enabled: false
+  
+
+# AllCops:
+#   TargetRubyVersion: 2.6
+#   Exclude:
+#     - db/schema.rb
+#     - config/unicorn.rb
+#     - config/unicorn_staging.rb
+#     - tmp/**/*
+#     - bin/*
+#     - db/migrate/*
+#     - vendor/**/*

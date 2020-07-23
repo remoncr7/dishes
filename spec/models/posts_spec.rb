@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  before do 
+  before do
     @post = build(:post)
   end
 
   it 'FactoryBotで作成したpostは登録できる' do
-      expect(@post.valid?).to eq(true)
+    expect(@post.valid?).to eq(true)
   end
 
   it 'titleが空だとNG' do
@@ -47,7 +47,6 @@ RSpec.describe Post, type: :model do
     end
   end
 
-
   it 'httpから始まるurlは登録できる' do
     @post.url = 'http://example.com'
     expect(@post).to be_valid
@@ -57,16 +56,14 @@ RSpec.describe Post, type: :model do
     @post.url = 'htt://example.com'
     expect(@post).not_to be_valid
   end
-  
+
   it '画像ファイルが4MBバイト以上はNG' do
-    @post.img = Rack::Test::UploadedFile.new(File.join(Rails.root, "spec/fixtures/IMG_3777.PNG"))
+    @post.img = Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/IMG_3777.PNG'))
     expect(@post).not_to be_valid
   end
-  
+
   it 'jpg jpeg gif png以外のファイルタイプはNG' do
-    @post.img = Rack::Test::UploadedFile.new(File.join(Rails.root, "spec/fixtures/IMG_3393 2.HEIC"))
+    @post.img = Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/IMG_3393 2.HEIC'))
     expect(@post).not_to be_valid
   end
-
 end
-

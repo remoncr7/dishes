@@ -4,9 +4,9 @@ class Users::PasswordsController < Devise::PasswordsController
   before_action :check_guest, only: :create
 
   def check_guest
-    if params[:user][:email].downcase == 'guest@example.com'
-      redirect_to controller: :posts, action: :index, alert: 'ゲストユーザーの変更・削除はできません。'
-    end
+    return unless params[:user][:email].downcase == 'guest@example.com'
+
+    redirect_to controller: :posts, action: :index, alert: 'ゲストユーザーの変更・削除はできません。'
   end
   # GET /resource/password/new
   # def new
