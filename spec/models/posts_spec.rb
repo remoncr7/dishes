@@ -19,7 +19,7 @@ RSpec.describe Post, type: :model do
     expect(@post.valid?).to eq(false)
   end
 
-  describe 'title length' do
+  describe 'titleの文字数' do
     context('titleが15文字以内のとき')
     it '投稿できる' do
       @post.title = 'a' * 15
@@ -33,7 +33,7 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  describe 'text length' do
+  describe 'キャプションの文字数' do
     context('textが400文字以内のとき')
     it '投稿できる' do
       @post.text = 'a' * 400

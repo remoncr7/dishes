@@ -28,7 +28,7 @@ RSpec.describe User, type: :model do
       expect(@user.valid?).to eq(false)
     end
 
-    describe 'passward length' do
+    describe 'パスワードの文字数' do
       context 'パスワードが6桁のとき' do
         it '登録できる' do
           @user.password = @user.password_confirmation = '123456'

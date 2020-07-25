@@ -17,6 +17,7 @@ RSpec.describe 'Signup', type: :system do
     expect(page).to have_content '肉じゃが'
     expect(page).to have_selector '.far'
   end
+
   it '投稿詳細ページで投稿の情報が表示されるか' do
     login_post
     find('.post__elements').click
@@ -25,6 +26,7 @@ RSpec.describe 'Signup', type: :system do
     expect(page).to have_content '肉じゃが'
     expect(page).to have_link '参考にしたレシピはこちら'
   end
+
   it '投稿詳細ページでいいね機能が正常に機能しているか' do
     login_post
     find('.post__elements').click
@@ -34,6 +36,7 @@ RSpec.describe 'Signup', type: :system do
     find('.fa-heart').click
     expect(page).to have_selector '.far'
   end
+
   it 'MyPostに表示されるか' do
     login_post
     click_link 'MyPost'
@@ -60,6 +63,7 @@ RSpec.describe 'Signup', type: :system do
     expect(page).to have_content 'いいねした投稿'
     expect(current_path).to eq like_path
   end
+  
   it 'MyPostページに遷移できるか' do
     login_post
     find('.dropdown-toggle').click
