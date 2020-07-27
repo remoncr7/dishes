@@ -1,24 +1,31 @@
-# README
+# Dishes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+料理の画像投稿アプリです。
 
-Things you may want to cover:
 
-* Ruby version
+# 制作背景
+「献立考案を補助してくれるサービスは複数あるにも関わらず、献立を立てることに時間がかかる」という実体験から想起しました。
+そこで立てた仮説が「献立を立てる際は、過去に作ったことがあるまたは食べたことがあるものの中から献立を立てている」という仮説で、
+自分が作った料理をシェアできる料理に特化したSNSがあれば良いと考え作成しました。
 
-* System dependencies
 
-* Configuration
+# URL
+https://dishes20200725.herokuapp.com/
+非ログイン状態ではトップページのみ閲覧可能です。
+「ゲストログイン」をクリックすると、メールアドレス及びパスワードを入力せずにログインでき全ての機能を実行できます。
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+# 使用技術
+・ruby 2.6.3
+・Rails 6.0.3.2
+・MySQL 8.0.19 
+・RSpec
+・Sass
+・bootstrap
 
-* Services (job queues, cache servers, search engines, etc.)
+# 機能
+・ログイン、ログアウト機能
+・いいね機能
+・画像投稿機能
 
-* Deployment instructions
-
-* ...
