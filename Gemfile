@@ -28,6 +28,7 @@ gem 'devise-i18n-views'
 gem 'mini_magick'
 gem 'pry-rails'
 gem 'rails-i18n'
+gem 'fog-aws'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
