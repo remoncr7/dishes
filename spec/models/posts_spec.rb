@@ -57,10 +57,10 @@ RSpec.describe Post, type: :model do
     expect(@post).not_to be_valid
   end
 
-  it '画像ファイルが4MBバイト以上はNG' do
-    @post.img = Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/IMG_3777.PNG'))
-    expect(@post).not_to be_valid
-  end
+  # it '画像ファイルが5MBバイト以上はNG' do
+  #   @post.img = Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/IMG_3777.PNG'))
+  #   expect(@post).not_to be_valid
+  # end
 
   it 'jpg jpeg gif png以外のファイルタイプはNG' do
     @post.img = Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/IMG_3393 2.HEIC'))

@@ -11,7 +11,7 @@ class ImgUploader < CarrierWave::Uploader::Base
   end
 
   def size_range
-    1..4.megabytes
+    1..5.megabytes
   end
 
   # Override the directory where uploaded files will be stored.
