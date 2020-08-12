@@ -16,16 +16,19 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(session[:post] || {})
   end
 
   def create
     @post = Post.new(posts_params)
     @post.user = current_user
     if @post.save
+      session[:post] = nil
       redirect_to root_path, notice: '投稿しました！'
     else
-      render :new
+      session[:post] = @post.attributes.slice(*posts_params.keys)
+      flash[:danger] = @post.errors.full_messages
+      redirect_to new_url
     end
   end
 
@@ -34,7 +37,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
     if @post.user == current_user
       render 'edit'
     else
@@ -47,7 +49,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path, notice: '更新しました！'
     else
-      render :edit
+      flash[:danger] = @post.errors.full_messages
+      redirect_to edit_post_path
     end
   end
 

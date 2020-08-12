@@ -1,6 +1,13 @@
 <%= javascript_pack_tag "posts/edit" %>
 <%= stylesheet_pack_tag "posts/edit" %>
 
+
+<% flash.each do |message_type, messages| %>
+  <% messages.each do |message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+<% end %>
+
 <div class="container">
   <div class="post-form">
       <h1>編集する</h1>

@@ -109,15 +109,15 @@ RSpec.describe PostsController, type: :request do
           post '/', params: { post: attributes_for(:post, img: '') }
         end.not_to change(@user.posts, :count)
       end
-      it 'リクエストが成功するか' do
+      it '302レスポンスが返ってきているか' do
         sign_in @user
         post '/', params: { post: attributes_for(:post, img: '') }
-        expect(response.status).to eq 200
+        expect(response.status).to eq 302
       end
-      it 'エラーが表示されるか' do
+      it '/newにリダイレクトされるか' do
         sign_in @user
         post '/', params: { post: attributes_for(:post, title: '') }
-        expect(response.body).to include 'タイトルを入力してください'
+        expect(response).to redirect_to '/new'
       end
     end
   end
@@ -196,15 +196,15 @@ RSpec.describe PostsController, type: :request do
         patch '/posts/0/update', params: { post: attributes_for(:post, title: '') }
         expect(@post.reload.title).to eq 'オムライス'
       end
-      it 'リクエストが成功するかか' do
+      it '302レスポンスが返ってきているか' do
         sign_in @user
         patch '/posts/0/update', params: { post: attributes_for(:post, title: '') }
-        expect(response.status).to eq 200
+        expect(response.status).to eq 302
       end
-      it 'エラーが表示されるか' do
+      it 'editにリダイレクトされるか' do
         sign_in @user
         patch '/posts/0/update', params: { post: attributes_for(:post, title: '') }
-        expect(response.body).to include 'タイトルを入力してください'
+        expect(response).to redirect_to edit_post_path
       end
     end
   end
