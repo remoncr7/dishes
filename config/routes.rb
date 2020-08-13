@@ -12,14 +12,15 @@ Rails.application.routes.draw do
   get 'posts/:id/edit', to: 'posts#edit'
   patch '/posts/:id/update', to: 'posts#update'
   get '/like', to: 'posts#like'
-
+  
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
     passwords: 'users/passwords'
   }
-
+  
   devise_scope :user do
+    get '/users', to: 'users/registrations#new'
     get 'sign_in', to: 'users/sessions#new'
     get 'sign_out', to: 'users/sessions#destroy'
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
