@@ -2,14 +2,9 @@
 <%= stylesheet_pack_tag "posts/new" %>
 
 
-<% flash.each do |message_type, messages| %>
-  <% messages.each do |message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
-<% end %>
-
 <div class="container">
   <div class="post-form">
+      <%= render "error_message" %>
       <h1>投稿する</h1>
       <%= form_for @post, :url => { action: "create"} do |f| %>
          <%= render "layouts/error_messages", model: f.object %>

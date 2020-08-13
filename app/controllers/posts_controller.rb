@@ -27,8 +27,10 @@ class PostsController < ApplicationController
       redirect_to root_path, notice: '投稿しました！'
     else
       session[:post] = @post.attributes.slice(*posts_params.keys)
-      flash[:danger] = @post.errors.full_messages
-      redirect_to new_url
+      redirect_to new_path, flash: {
+        post: @post,
+        error_messages: @post.errors.full_messages
+      }
     end
   end
 
@@ -47,10 +49,14 @@ class PostsController < ApplicationController
   def update
     @post.update(posts_params)
     if @post.save
+      session[:post] = nil
       redirect_to root_path, notice: '更新しました！'
     else
-      flash[:danger] = @post.errors.full_messages
-      redirect_to edit_post_path
+      session[:post] = @post.attributes.slice(*posts_params.keys)
+      redirect_to edit_post_path, flash: {
+        post: @post,
+        error_messages: @post.errors.full_messages
+      } 
     end
   end
 
