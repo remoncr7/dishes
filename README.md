@@ -54,3 +54,5 @@ https://dishes20200725.herokuapp.com/
 
 ・画像投稿機能
 
+・レスポンシブデザイン
+
